@@ -44,6 +44,11 @@
 		WHERE TEMP_ID = #{tempId}
 	</update>
 	
+	<delete id="tempDAO.deleteTemp" parameterType="egovframework.let.temp.service.TempVO">
+		DELETE FROM lettemp
+		WHERE TEMP_ID = #{tempId}
+	</delete>
+	
 </mapper>
 
 

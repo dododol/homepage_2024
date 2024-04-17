@@ -35,4 +35,20 @@ public class TempDAO extends EgovAbstractMapper{
 	public void updateTemp(TempVO vo) throws Exception {
 		update("tempDAO.updateTemp", vo);
 	}
+	
+	//임시데이터 삭제
+	public void deleteTemp(TempVO vo) throws Exception {
+		delete("tempDAO.deleteTemp",vo);
+	}
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -72,6 +72,12 @@ public class TempController {
 		return "forward:/temp/selectList.do";
 	}
 	
+	//임시데이터 삭제하기
+	@RequestMapping(value = "/temp/delete.do")
+	public String delete(TempVO tempVO, HttpServletRequest request) throws Exception {
+		tempService.deleteTemp(tempVO);
+		return "forward:/temp/selectList.do";
+	}
 }
 
 
