@@ -17,6 +17,9 @@
 </head>
 <body>
 
+
+
+게시물 총 수 : <c:out value="${totCnt}" />건
 <table>
 	<thead>
 		<tr>
