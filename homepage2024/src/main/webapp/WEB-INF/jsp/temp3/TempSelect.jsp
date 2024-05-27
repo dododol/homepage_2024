@@ -9,8 +9,33 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 
+${result.tempVal}
+
+<div class="box-btn">
+	<c:url var="uptUrl" value="/temp3/tempRegist.do">
+		<c:param name="tempId" value="${result.tempId}" />
+	</c:url>
+	<a href="${uptUrl}">수정</a>
+	
+	<c:url var="delUrl" value="/temp3/delete.do">
+		<c:param name="tempId" value="${result.tempId}" />
+	</c:url>
+	<a href="${delUrl}" class="btn-del">삭제</a>
+	
+	<a href="/temp3/selectList.do">목록</a>
+</div>
+<script>
+$(document).ready(function(){
+	$(".btn-del").click(function(){
+		if(!confirm("삭제하시겠습니까?")){
+			return false;
+		}
+	});
+});
+</script>
 </body>
 </html>

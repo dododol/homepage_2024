@@ -9,8 +9,33 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
-<body>
 
+<body>
+	<c:choose>
+		<c:when test="${not empty result.tempId}">
+			<c:set var="actionUrl" value="/temp3/update.do" />
+		</c:when>
+		<c:otherwise>
+			<c:set var="actionUrl" value="/temp3/insert.do" />
+		</c:otherwise>
+	</c:choose>
+	
+	*등록폼
+	<form action="${actionUrl}" method="post" name="tempVO">		<!-- get가볍다, post 무겁다 --> <!-- name : VO와 맞아야한다. -->
+		<input type="hidden" name="tempId" value="${result.tempId}" />
+		<label for="tempVal">값 정보 : </label>
+		<input type="text" id="tempVal" name="tempVal" value="${result.tempVal}" />
+		<br/>
+		<c:choose>
+			<c:when test="${not empty result.tempId}">
+				<button type="submit">수정</button>
+			</c:when>
+			<c:otherwise>
+				<button type="submit">등록</button>			
+			</c:otherwise>
+		</c:choose>
+	</form>
 </body>
 </html>
